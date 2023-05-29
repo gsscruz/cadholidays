@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 
-import mapatopojson from '../utils/maptopojson';
+import mapatopojson from '../../utils/maptopojson';
 
 function Map() {
   console.log(mapatopojson);
