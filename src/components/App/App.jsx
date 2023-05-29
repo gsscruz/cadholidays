@@ -1,15 +1,11 @@
 import React from 'react';
 import styles from './styles.module.css';
-
-import ComponentA from '../ComponentA/ComponentA';
-import ComponentB from '../ComponentB/ComponentB';
+import Map from '../Map/Map';
 
 function App() {
   return (
     <>
-      <h1 className={styles.example0}>Vite + React</h1>
-      <ComponentA />
-      <ComponentB />
+      <Map />
     </>
   );
 }
