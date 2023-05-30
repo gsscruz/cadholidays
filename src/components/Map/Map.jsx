@@ -8,7 +8,6 @@ function Map() {
   console.log(mapatopojson);
   return (
     <>
-      <button>Light up Manitoba</button>
       <ComposableMap
         projection='geoMercator'
         projectionConfig={{
