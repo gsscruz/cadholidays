@@ -1,16 +1,20 @@
 import React from 'react';
 import styles from './styles.module.css';
-
-import ComponentA from '../ComponentA/ComponentA';
-import ComponentB from '../ComponentB/ComponentB';
+import Map from '../Map/Map';
+import Layout from '../Layout/Layout';
+import HolidayPicker from '../HolidayPicker/HolidayPicker';
+import Header from '../Header/Header';
+import AppContainer from '../AppContainer/AppContainer';
 
 function App() {
   return (
-    <>
-      <h1 className={styles.example0}>Vite + React</h1>
-      <ComponentA />
-      <ComponentB />
-    </>
+    <AppContainer>
+      <Header />
+      <Layout>
+        <Map />
+        <HolidayPicker />
+      </Layout>
+    </AppContainer>
   );
 }
 
