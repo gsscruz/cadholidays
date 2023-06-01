@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
+import { gsap } from 'gsap';
+
 import {
   ComposableMap,
   Geographies,
@@ -14,6 +16,32 @@ function Map({ chosenHoliday }) {
   const provAndHoliday = matchProvNHoliday(holidays, chosenHoliday);
   const activeMapTile = '#D81A0D';
   const defaultMapTile = '#E8CB9B';
+
+  const comp = React.useRef();
+
+  // gsap.to(mapTile.current, {
+  //   fill: activeMapTile,
+  //   scale: 1.09,
+  //   duration: 0.3,
+  // });
+
+  React.useLayoutEffect(() => {
+    // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
+    let ctx = gsap.context(() => {
+      // Our animations can use selector text like ".box"
+      // this will only select '.box' elements that are children of the component
+      gsap.to('.chosen', {
+        fill: activeMapTile,
+        duration: 0.6,
+        stagger: 0.4,
+        ease: 'back',
+        y: 6,
+      });
+    }, comp); // <- IMPORTANT! Scopes selector text
+
+    return () => ctx.revert(); // cleanup
+  });
+
   return (
     <>
       <ComposableMap
@@ -25,23 +53,23 @@ function Map({ chosenHoliday }) {
         }}
         className={styles.composableMap}
       >
-        <Geographies geography={mapatopojson.data}>
+        <Geographies geography={mapatopojson.data} ref={comp}>
           {({ geographies }) =>
             geographies.map((geo) => {
               return (
                 <Geography
+                  className={provAndHoliday.includes(geo.id) ? 'chosen' : null}
                   key={geo.rsmKey}
                   geography={geo}
-                  className={styles.geographyStyle}
                   style={{
                     hover: {
                       fill: activeMapTile,
                     },
                     default: {
                       fill:
-                        provAndHoliday.includes(geo.id) === true
-                          ? activeMapTile
-                          : defaultMapTile,
+                        // provAndHoliday.includes(geo.id) === true
+                        //   ? activeMapTile:
+                        defaultMapTile,
                     },
                   }}
                   onClick={() => console.log('This province: ', geo)}
