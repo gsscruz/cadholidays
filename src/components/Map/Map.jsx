@@ -12,7 +12,8 @@ import matchProvNHoliday from '../../utils/matchingHolidays';
 
 function Map({ chosenHoliday }) {
   const provAndHoliday = matchProvNHoliday(holidays, chosenHoliday);
-  console.log(provAndHoliday);
+  const activeMapTile = '#D81A0D';
+  const defaultMapTile = '#E8CB9B';
   return (
     <>
       <ComposableMap
@@ -22,29 +23,25 @@ function Map({ chosenHoliday }) {
           scale: 800,
           center: [8, 0],
         }}
-        style={{
-          width: '50%',
-        }}
+        className={styles.composableMap}
       >
         <Geographies geography={mapatopojson.data}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              {
-                /* console.log(geo); */
-              }
               return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
+                  className={styles.geographyStyle}
                   style={{
                     hover: {
-                      fill: '#F53',
+                      fill: activeMapTile,
                     },
                     default: {
                       fill:
                         provAndHoliday.includes(geo.id) === true
-                          ? 'goldenrod'
-                          : 'grey',
+                          ? activeMapTile
+                          : defaultMapTile,
                     },
                   }}
                   onClick={() => console.log('This province: ', geo)}
@@ -56,102 +53,105 @@ function Map({ chosenHoliday }) {
 
         <Marker
           coordinates={[-125.50832118312617, 54.13431515412254]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             BC
           </text>
         </Marker>
         <Marker
           coordinates={[-115.02843674055711, 54.48996969413863]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='center' fill='black'>
+          <text textAnchor='center' className={styles.markerText}>
             AB
           </text>
         </Marker>
         <Marker
           coordinates={[-106.81072628694163, 54.48996969413863]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='center' fill='black'>
+          <text textAnchor='center' className={styles.markerText}>
             SK
           </text>
         </Marker>
         <Marker
           coordinates={[-99.26385159198318, 54.48996969413863]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             MB
           </text>
         </Marker>
         <Marker
           coordinates={[-86.1959715014398, 49.98996969413863]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             ON
           </text>
         </Marker>
         <Marker
           coordinates={[-73.60430669409308, 52.48996969413863]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             QC
           </text>
         </Marker>
         <Marker
           coordinates={[-67.48829125466004, 46.7699262977717]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             NB
           </text>
         </Marker>
         <Marker
           coordinates={[-63.46368195846245, 44.9999922673301]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             NS
           </text>
         </Marker>
-        <Marker coordinates={[-63.3395549231949, 46.69]} fill='#777'>
-          <text textAnchor='start' fill='black'>
+        <Marker
+          coordinates={[-63.3395549231949, 46.69]}
+          className={styles.markers}
+        >
+          <text textAnchor='start' className={styles.markerText}>
             PE
           </text>
         </Marker>
         <Marker
           coordinates={[-64.20318006501337, 54.023131913049376]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             NL
           </text>
         </Marker>
         <Marker
           coordinates={[-136.71401596884695, 63.36562597537944]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             YT
           </text>
         </Marker>
         <Marker
           coordinates={[-120.09233529614639, 64.01955255551854]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             NT
           </text>
         </Marker>
         <Marker
           coordinates={[-100.42202306049143, 63.89260362371475]}
-          fill='#777'
+          className={styles.markers}
         >
-          <text textAnchor='start' fill='black'>
+          <text textAnchor='start' className={styles.markerText}>
             NU
           </text>
         </Marker>

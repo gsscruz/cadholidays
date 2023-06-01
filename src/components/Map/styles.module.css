@@ -1,3 +1,12 @@
-.example1 {
-  color: blue;
+.composableMap {
+  width: 60%;
+  stroke: #f9f4f5;
+  stroke-width: 1.5;
+}
+.markers {
+  stroke: var(--marker-color);
+  stroke-width: 1.6;
+}
+.markerText {
+  fill: var(--marker-color);
 }
