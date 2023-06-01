@@ -56,6 +56,7 @@ function Map({ chosenHoliday }) {
         <Geographies geography={mapatopojson.data} ref={comp}>
           {({ geographies }) =>
             geographies.map((geo) => {
+              console.log(geo);
               return (
                 <Geography
                   className={provAndHoliday.includes(geo.id) ? 'chosen' : null}
@@ -63,7 +64,7 @@ function Map({ chosenHoliday }) {
                   geography={geo}
                   style={{
                     hover: {
-                      fill: activeMapTile,
+                      fill: defaultMapTile,
                     },
                     default: {
                       fill:
