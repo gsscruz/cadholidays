@@ -1,15 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px dashed purple;
-  font-family: 'Love January', sans-serif;
+
+  font-family: 'Oxygen', sans-serif;
 }
 html {
   box-sizing: border-box;
 }
 body {
   min-height: 100vh;
-  background: pink;
+  background: #f7f7f7;
 }
 img {
   display: block;

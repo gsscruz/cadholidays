@@ -7,12 +7,15 @@ import Header from '../Header/Header';
 import AppContainer from '../AppContainer/AppContainer';
 
 function App() {
+  const [chosenHoliday, setChosenHoliday] = React.useState('');
+  const [lang, setLang] = React.useState(false);
+
   return (
     <AppContainer>
-      <Header />
+      <Header setLang={setLang} lang={lang} />
       <Layout>
-        <Map />
-        <HolidayPicker />
+        <Map chosenHoliday={chosenHoliday} />
+        <HolidayPicker lang={lang} setChosenHoliday={setChosenHoliday} />
       </Layout>
     </AppContainer>
   );

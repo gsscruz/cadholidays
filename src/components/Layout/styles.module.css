@@ -1,5 +1,5 @@
 .main {
   display: flex;
-  align-items: center;
+  align-items: normal;
   justify-content: space-around;
 }
