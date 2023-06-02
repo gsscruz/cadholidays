@@ -6,7 +6,10 @@ function Header({ lang, setLang }) {
     <div className={styles.headerContainer}>
       <div></div>
       <header className={styles.header}>CAholidays</header>
-      <button onClick={() => setLang((prevVal) => !prevVal)}>
+      <button
+        className={styles.langBtn}
+        onClick={() => setLang((prevVal) => !prevVal)}
+      >
         {lang === true ? 'EN' : 'FR'}
       </button>
     </div>

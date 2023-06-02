@@ -19,12 +19,6 @@ function Map({ chosenHoliday }) {
 
   const comp = React.useRef();
 
-  // gsap.to(mapTile.current, {
-  //   fill: activeMapTile,
-  //   scale: 1.09,
-  //   duration: 0.3,
-  // });
-
   React.useLayoutEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
