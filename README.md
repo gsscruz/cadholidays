@@ -3,7 +3,7 @@
 > An interactive map that displays which provinces of Canada celebrate which holidays\*.
 
 - \*This is not an exhaustive list
-- _Holiday data obtain from: https://canada-holidays.ca/api/_
+- _Holiday data obtained from: https://canada-holidays.ca/api/_
 
 ## Techs used
 
