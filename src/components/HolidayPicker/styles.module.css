@@ -4,6 +4,16 @@
   width: 50%;
 }
 
-.dropdownGroup {
-  text-align: center;
+.holidays {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.holidaysTitle {
+  margin-bottom: 50px;
+}
+.selectBtn {
+  background: black;
 }

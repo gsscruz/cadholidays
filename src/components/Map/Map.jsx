@@ -50,7 +50,6 @@ function Map({ chosenHoliday }) {
         <Geographies geography={mapatopojson.data} ref={comp}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              console.log(geo);
               return (
                 <Geography
                   className={provAndHoliday.includes(geo.id) ? 'chosen' : null}
@@ -61,13 +60,9 @@ function Map({ chosenHoliday }) {
                       fill: defaultMapTile,
                     },
                     default: {
-                      fill:
-                        // provAndHoliday.includes(geo.id) === true
-                        //   ? activeMapTile:
-                        defaultMapTile,
+                      fill: defaultMapTile,
                     },
                   }}
-                  onClick={() => console.log('This province: ', geo)}
                 />
               );
             })

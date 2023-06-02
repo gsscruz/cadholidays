@@ -1,5 +1,13 @@
 .main {
   display: flex;
-  align-items: normal;
+  align-items: center;
   justify-content: space-around;
+  padding-right: 80px;
+  padding-left: 80px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main {
+    flex-direction: column;
+  }
 }
