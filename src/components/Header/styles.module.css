@@ -1,4 +1,22 @@
 .header {
   text-align: center;
   font-size: 80px;
+  font-family: 'Love January', sans-serif;
+  color: var(--marker-color);
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button:hover {
+  cursor: pointer;
+}
+.langBtn {
+  text-decoration: underline;
+}
+.langBtn:hover {
+  font-weight: bold;
 }

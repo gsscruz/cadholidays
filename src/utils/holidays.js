@@ -1210,5 +1210,15 @@ const holidays = {
     },
   ],
 };
+let duplicatedHolidays = holidays.provinces.map((province) => {
+  let multitpleHolidays = [...province.holidays];
+  return multitpleHolidays;
+});
 
-export default holidays;
+const idsa = duplicatedHolidays.map(({ id }) => id);
+const uniqueHolidays = duplicatedHolidays.filter(
+  ({ id }, index) => !idsa.includes(id, index + 1)
+);
+const canadianHolidays = uniqueHolidays.flat();
+
+export { canadianHolidays, holidays };

@@ -1,15 +1,21 @@
+:root {
+  --marker-color: #141115;
+  --map-hover-color: #d81a0d;
+  --map-default-color: #1a3845;
+}
+
 * {
   margin: 0;
   padding: 0;
-  border: 1px dashed purple;
-  font-family: 'Love January', sans-serif;
+
+  font-family: 'Oxygen', sans-serif;
 }
 html {
   box-sizing: border-box;
 }
 body {
   min-height: 100vh;
-  background: pink;
+  background: #f9f4f5;
 }
 img {
   display: block;

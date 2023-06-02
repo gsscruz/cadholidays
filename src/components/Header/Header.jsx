@@ -1,7 +1,19 @@
 import React from 'react';
 import styles from './styles.module.css';
-function Header() {
-  return <header className={styles.header}>Caholidays</header>;
+function Header({ lang, setLang }) {
+  console.log('qualeh ', lang);
+  return (
+    <div className={styles.headerContainer}>
+      <div></div>
+      <header className={styles.header}>CAholidays</header>
+      <button
+        className={styles.langBtn}
+        onClick={() => setLang((prevVal) => !prevVal)}
+      >
+        {lang === true ? 'EN' : 'FR'}
+      </button>
+    </div>
+  );
 }
 
 export default Header;
