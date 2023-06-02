@@ -1,4 +1,4 @@
-# # CAN holidays
+# CAN holidays
 
 > An interactive map that displays which provinces of Canada celebrate which holidays\*.
 
