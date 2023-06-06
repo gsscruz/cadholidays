@@ -4,7 +4,7 @@ function Header({ lang, setLang }) {
   return (
     <div className={styles.headerContainer}>
       <div></div>
-      <header className={styles.header}>CAholidays</header>
+      <header className={styles.header}>CANholidays</header>
       <button
         className={styles.langBtn}
         onClick={() => setLang((prevVal) => !prevVal)}
