@@ -14,5 +14,5 @@
 
 ---
 
-![App preview](/src/assets/preview.png App)
-![App gif](/src/assets/previewgif.gif Demo)
+![App preview](/src/assets/preview.png)
+![App gif](/src/assets/previewgif.gif)
